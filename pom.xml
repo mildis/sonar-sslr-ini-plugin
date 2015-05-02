@@ -34,6 +34,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.buildVersion>5.2-SNAPSHOT</sonar.buildVersion>
 		<jdk.min.version>1.7</jdk.min.version>
+		<sonar.pluginKey>sslr4ini</sonar.pluginKey>
+		<sonar.pluginName>SSLR INI</sonar.pluginName>
+		<sonar.pluginClass>fr.techad.sonar.sslr.ini.IniPlugin</sonar.pluginClass>
 	</properties>
 
 	<dependencies>
@@ -42,6 +45,11 @@
 			<artifactId>sonar-plugin-api</artifactId>
 			<version>${sonar.buildVersion}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.sonar</groupId>
+			<artifactId>sonar-deprecated</artifactId>
+			<version>${sonar.buildVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.sonar.sslr</groupId>
@@ -97,11 +105,6 @@
 				<artifactId>sonar-packaging-maven-plugin</artifactId>
 				<version>1.12.1</version>
 				<extensions>true</extensions>
-				<configuration>
-					<pluginKey>sslr4ini</pluginKey>
-					<pluginName>SSLR INI</pluginName>
-					<pluginClass>fr.techad.sonar.sslr.ini.Plugin</pluginClass>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
